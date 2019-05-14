@@ -1,0 +1,33 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="RSSMWeb.login" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register Assembly="ExtAspNet" Namespace="ExtAspNet" TagPrefix="ext" %>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>登录界面</title>
+</head>
+<body>
+    <form id="form1" runat="server"  >
+    <ext:PageManager ID="PageManager1" runat="server" />
+    <div>
+     <ext:Window ID="Window1" runat="server" Title="瑞驰企业管理系统" IsModal="false" EnableClose="false" 
+        WindowPosition="GoldenSection" Width="350px" ClientIDMode="Inherit" BoxConfigPosition="Start">
+         <Items>
+             <ext:SimpleForm ID="SimpleForm1" runat="server" ShowBorder="false" BodyPadding="10px"
+                 LabelWidth="60px" EnableBackgroundColor="true" ShowHeader="false" >
+                 <Items>
+                     <ext:TextBox ID="tbxUserName" Label="用户名" Required="false" runat="server"  >
+                     </ext:TextBox>
+                     <ext:TextBox ID="tbxPassword" Label="密码" TextMode="Password" Required="false" runat="server" >
+                    </ext:TextBox>
+                    <ext:Button EnableAjax="false" ID="btnLogin" Text="登录" ValidateForms="SimpleForm1" ValidateTarget="Top"
+                        runat="server" OnClick="btnLogin_Click" >
+                    </ext:Button>
+                </Items>
+            </ext:SimpleForm>
+        </Items>
+    </ext:Window>
+    </div>
+    </form>
+</body>
+</html>
