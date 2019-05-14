@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Tree>
+    <TreeNode Text="深圳市第二人民医院" SingleClickExpand="true">
+      <TreeNode Text="项目信息" NavigateUrl="~/projectsmanage/iframe_info.aspx" >
+      </TreeNode>
+      <TreeNode Text="问题追踪" NavigateUrl="~/projectsmanage/iframe_bug.aspx" >
+      </TreeNode>
+      <TreeNode Text="项目附件" NavigateUrl="~/projectsmanage/iframe_attachment.aspx" >
+      </TreeNode>
+    </TreeNode>
+    <TreeNode Text="河南省人民医院" SingleClickExpand="true" >
+      <TreeNode Text="项目信息" NavigateUrl="~/projectsmanage/iframe_info.aspx" >
+      </TreeNode>
+      <TreeNode Text="问题追踪" NavigateUrl="~/projectsmanage/iframe_bug.aspx" >
+      </TreeNode>
+      <TreeNode Text="项目附件" NavigateUrl="~/projectsmanage/iframe_attachment.aspx" >
+      </TreeNode>
+    </TreeNode>
+</Tree>

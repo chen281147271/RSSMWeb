@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Tree>
+  <TreeNode Text="问题报表" SingleClickExpand="true">
+    <TreeNode Text="按过程类型统计" NavigateUrl="~/bugTracer/bug_classify1.aspx?1" >
+    </TreeNode>
+    <TreeNode Text="按问题子类统计" NavigateUrl="~/bugTracer/bug_classify1.aspx?2" >
+    </TreeNode>
+    <TreeNode Text="按产品统计" NavigateUrl="~/bugTracer/bug_classify1.aspx?3" >
+    </TreeNode>
+    <!--<TreeNode Text="按项目统计" NavigateUrl="~/bugTracer/bug_classify1.aspx?4" >
+    </TreeNode>-->
+    <TreeNode Text="按项目统计" NavigateUrl="~/bugTracer/bug_pj.aspx" >
+    </TreeNode>
+  </TreeNode>
+</Tree>

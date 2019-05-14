@@ -1,0 +1,149 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="create_bug.aspx.cs" Inherits="RSSMWeb.bugTracer.create_bug" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <ext:PageManager ID="PageManager1" AutoSizePanelID="Panel1" runat="server" />
+    <ext:Panel ID="Panel1" runat="server" Layout="Fit" ShowBorder="False" ShowHeader="false"
+        BodyPadding="5px" EnableBackgroundColor="true">
+        <Toolbars>
+            <ext:Toolbar ID="Toolbar1" runat="server">
+                <Items>
+                    <ext:Button ID="btnClose" EnablePostBack="false" Text="关闭" runat="server" Icon="SystemClose">
+                    </ext:Button>
+                    <ext:Button ID="btnSaveRefresh" Text="保存新增" runat="server" Icon="SystemSaveNew" OnClick="btnSaveRefresh_Click"
+                        ConfirmText="确认保存该问题?" ConfirmTitle="确认" ValidateForms="Form2" ValidateTarget="Self">
+                    </ext:Button>
+                    <ext:ToolbarFill ID="ToolbarFill1" runat="server">
+                    </ext:ToolbarFill>
+                    <ext:ToolbarText ID="ToolbarText1" Text="附件请打包后上传" runat="server">
+                    </ext:ToolbarText>
+                    <ext:ToolbarSeparator ID="ToolbarSeparator2" runat="server">
+                    </ext:ToolbarSeparator>
+                    <ext:ToolbarText ID="ToolbarText2" Text="放弃保存则同时放弃附件上传&nbsp;&nbsp;" runat="server">
+                    </ext:ToolbarText>
+                </Items>
+            </ext:Toolbar>
+        </Toolbars>
+        <Items>
+            <ext:Panel ID="Panel2" Layout="Fit" runat="server" ShowBorder="false" ShowHeader="false">
+                <Items>
+                    <ext:Form ID="Form2" ShowBorder="false" ShowHeader="false" EnableBackgroundColor="true"
+                        AutoScroll="true" BodyPadding="5px" runat="server" EnableCollapse="True">
+                        <Rows>
+                        <ext:FormRow>
+                                <Items>
+                                    <ext:RadioButton ID="rbtnSecond" GroupName="MyRadioGroup1"  Label="属性" LabelSeparator="" Text="需求" runat="server" Checked="true">
+                                    </ext:RadioButton>
+                                    <ext:RadioButton ID="rbtnThird" GroupName="MyRadioGroup1" Label="&nbsp;" LabelSeparator="" Text="问题" runat="server">
+                                    </ext:RadioButton>
+                                    <ext:RadioButton ID="rbtnFirst" GroupName="MyRadioGroup1" Label="&nbsp;" LabelSeparator="" Text="系统" runat="server">
+                                    </ext:RadioButton>
+                                </Items>
+                            </ext:FormRow>
+                            <ext:FormRow>
+                                <Items>
+                                    <ext:TextBox ID="BugTitle" Label="问题标题" runat="server" Required="true" ShowRedStar="true" />
+                                </Items>
+                            </ext:FormRow>
+                            <ext:FormRow>
+                                <Items>
+                                    <ext:DropDownList ID="BugType" runat="server" Label="问题分类">
+                                        <ext:ListItem Text="机械结构" Value="9001" />
+                                        <ext:ListItem Text="电气控制" Value="9002" />
+                                        <ext:ListItem Text="软件" Value="9003" />
+                                        <ext:ListItem Text="电子" Value="9004" />
+                                        <ext:ListItem Text="流程及操作" Value="9005" />
+                                        <ext:ListItem Text="其他" Value="9006" />
+                                    </ext:DropDownList>
+                                    <ext:DropDownList ID="BugBelongPD" runat="server" Label="所属产品"  >
+                                    </ext:DropDownList>
+                                </Items>
+                            </ext:FormRow>
+                            <ext:FormRow>
+                                <Items>
+                                        <ext:DropDownList ID="BugProcType" runat="server" Label="过程分类" Hidden="true">
+                                        <ext:ListItem Text="研发设计发现问题" Value="5001" />
+                                        <ext:ListItem Text="生产装配发现问题" Value="5002" />
+                                        <ext:ListItem Text="品质测试发现问题" Value="5003" />
+                                        <ext:ListItem Text="项目实施发现问题" Value="5004" />
+                                        <ext:ListItem Text="售后服务发现问题" Value="5005" />
+                                        <ext:ListItem Text="流程运行发现问题" Value="5006" />
+                                        <ext:ListItem Text="其他" Value="5007" />
+                                    </ext:DropDownList>
+<%--                                    <ext:DropDownList ID="BugBelongPD" runat="server" Label="所属产品"  >
+                                    </ext:DropDownList>--%>
+                                    <ext:DropDownList ID="BugBelongPJ" runat="server" Label="所属项目" Hidden="true">
+                                    </ext:DropDownList>
+                                </Items>
+                            </ext:FormRow>
+                            <ext:FormRow>
+                                <Items>
+                                    <ext:DropDownList ID="BugAuth" runat="server" Label="优先级" >
+<%--                                        <ext:ListItem Text="低" Value="7002" />
+                                        <ext:ListItem Text="中" Value="7003" Selected="true" />
+                                        <ext:ListItem Text="高" Value="7004" />--%>
+                                        <ext:ListItem Text="一般" Value="7003"  Selected="true"/>
+                                        <ext:ListItem Text="紧急" Value="7004" />
+                                    </ext:DropDownList>
+                                    <ext:DropDownList ID="NextUser" runat="server" Label="转发对象">
+                                    </ext:DropDownList>
+                                </Items>
+                            </ext:FormRow>
+                            <ext:FormRow>
+                                <Items>
+                                    <ext:CheckBox ID="IsResolved" runat="server" Text="" Label="现场是否解决" Hidden="true">
+                                    </ext:CheckBox>
+                                    <ext:DropDownList ID="DropDownList1" runat="server" Label="现场处理人" Hidden="true">
+                                    </ext:DropDownList>
+                                </Items>
+                            </ext:FormRow>
+                            <ext:FormRow>
+                                <Items>
+
+                                    <ext:DatePicker ID="OccurTime"  runat="server"
+                                        Label="发生日期">
+                                    </ext:DatePicker>
+                                      <ext:DatePicker ID="Expect_Time" runat="server" Label="预期解决日期" >
+                                    </ext:DatePicker>
+
+                                </Items>
+                            </ext:FormRow>
+                             <ext:FormRow>
+                                <Items>
+                                     <ext:DatePicker ID="FixTime" runat="server" Label="现场处理日期" Hidden="true">
+                                    </ext:DatePicker>
+                                </Items>
+                                 <Items>
+                                    <ext:DatePicker ID="DatePicker2" runat="server" Label="占位用！" Hidden="true">
+                                    </ext:DatePicker>
+                                </Items>
+                            </ext:FormRow>
+                            <ext:FormRow>
+                                <Items>
+                                    <ext:TextArea ID="Phenomenon" Label="现象描述" Height="60px" runat="server" AutoGrowHeight="true"
+                                        AutoGrowHeightMin="60" >
+                                    </ext:TextArea>
+                                </Items>
+                            </ext:FormRow>
+                            <ext:FormRow>
+                                <Items>
+                                    <ext:TextArea ID="Solution" Label="现场处理过程" Height="60px" runat="server" AutoGrowHeight="true" Hidden="true"
+                                        AutoGrowHeightMin="60">
+                                    </ext:TextArea>
+                                </Items>
+                            </ext:FormRow>
+                        </Rows>
+                    </ext:Form>
+                </Items>
+            </ext:Panel>
+        </Items>
+    </ext:Panel>
+    </form>
+</body>
+</html>
